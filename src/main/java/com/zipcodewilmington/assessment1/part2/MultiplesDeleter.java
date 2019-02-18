@@ -20,15 +20,17 @@ public class MultiplesDeleter {
             }
         }
 
-        int arraySize = removeNumbers.size();
+//        int arraySize = removeNumbers.size();
 
-        Integer[] newArray = new Integer[arraySize];
+        Integer[] updatedArray = ArrayUtils.updateArray(removeNumbers);
 
-        for (int i = 0; i< arraySize; i++) {
-               newArray[i] = removeNumbers.get(i);
-        }
-
-        return newArray;
+//        Integer[] newArray = new Integer[arraySize];
+//
+//        for (int i = 0; i< arraySize; i++) {
+//               newArray[i] = removeNumbers.get(i);
+//        }
+//
+        return updatedArray;
     }
 
     /**
@@ -45,15 +47,17 @@ public class MultiplesDeleter {
             }
         }
 
-        int arraySize = removeNumbers.size();
+//        int arraySize = removeNumbers.size();
+//
+//        Integer[] newArray = new Integer[arraySize];
+//
+//        for (int i = 0; i< arraySize; i++) {
+//            newArray[i] = removeNumbers.get(i);
+//        }
 
-        Integer[] newArray = new Integer[arraySize];
+        Integer[] updatedArray = ArrayUtils.updateArray(removeNumbers);
 
-        for (int i = 0; i< arraySize; i++) {
-            newArray[i] = removeNumbers.get(i);
-        }
-
-        return newArray;
+        return updatedArray;
     }
 
     /**
@@ -80,14 +84,18 @@ public class MultiplesDeleter {
             }
         }
 
-        int arraySize = removeNumbers.size();
+//        int arraySize = removeNumbers.size();
+//
+//        Integer[] newArray = new Integer[arraySize];
+//
+//        for (int i = 0; i< arraySize; i++) {
+//            newArray[i] = removeNumbers.get(i);
+//        }
+//
+//        return newArray;
 
-        Integer[] newArray = new Integer[arraySize];
+        Integer[] updatedArray = ArrayUtils.updateArray(removeNumbers);
 
-        for (int i = 0; i< arraySize; i++) {
-            newArray[i] = removeNumbers.get(i);
-        }
-
-        return newArray;
+        return updatedArray;
     }
 }

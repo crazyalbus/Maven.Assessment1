@@ -30,14 +30,29 @@ public class ArrayUtils {
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
-        ArrayList<Object> newArray = new ArrayList<>();
+        ArrayList<Integer> newArray = new ArrayList<>();
 
         for (Object value : objectArray) {
             if (!value.equals(objectToRemove)) {
-                newArray.add(value);
+                newArray.add((int)value);
             }
         }
-        return newArray.toArray();
+        Integer[] updatedArray = updateArray(newArray);
+//        Integer[] updatedArray = new Integer[newArray.size()];
+//        for (int i = 0; i< newArray.size(); i++) {
+//            updatedArray[i] = newArray.get(i);
+//        }
+
+        return updatedArray;
+    }
+
+    public static Integer[] updateArray(ArrayList<Integer> integerArray) {
+        Integer[] newArray = new Integer[integerArray.size()];
+
+        for (int i = 0; i< integerArray.size(); i++) {
+            newArray[i] = integerArray.get(i);
+        }
+        return newArray;
     }
 
     /**
@@ -66,18 +81,18 @@ public class ArrayUtils {
      * given two arrays `objectArray` and `objectArrayToAdd`, return an array containing all elements in `objectArray` and `objectArrayToAdd`
      */
     public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
-        ArrayList<Object> mergedArray = new ArrayList<>();
+        ArrayList<Integer> mergedArray = new ArrayList<>();
 
         for (Object element:objectArray) {
-            mergedArray.add(element);
+            mergedArray.add((int) element);
         }
 
         for (Object element:objectArrayToAdd) {
-            mergedArray.add(element);
+            mergedArray.add((int)element);
         }
 
-        Object[] newArray = mergedArray.toArray();
+        Integer[] updatedArray = updateArray(mergedArray);
 
-        return newArray;
+        return updatedArray;
     }
 }
