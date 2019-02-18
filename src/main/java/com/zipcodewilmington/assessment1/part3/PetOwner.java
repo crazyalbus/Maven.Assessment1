@@ -29,7 +29,7 @@ public class PetOwner {
      */
     public void addPet(Pet pet) {
         Pet newPet = pet;
-        listOfPets.add(newPet);
+        listOfPets.add(pet);
     }
 
     /**
