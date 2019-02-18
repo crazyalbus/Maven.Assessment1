@@ -56,9 +56,10 @@ public class BasicStringUtils {
         String invertedStr = "";
         for(int i=0; i<str.length(); i++) {
             String letterToConvert = str.substring(i, i+1);
-//            if (letterToConvert =)
-//            String newLetter = null;
-//            invertedStr = invertedStr + convert;
+            if (!letterToConvert.equals(letterToConvert.toUpperCase())){
+                invertedStr = invertedStr + letterToConvert.toUpperCase();
+            } else {invertedStr = invertedStr + letterToConvert.toLowerCase();
+            }
         }
         return invertedStr;
     }

@@ -4,17 +4,23 @@ package com.zipcodewilmington.assessment1.part3;
  * Created by leon on 2/16/18.
  */
 public abstract class Pet implements Animal {
+    String name;
+    int age;
+
     /**
      * nullary constructor
      * by default, pet has age of 0; name of "";
      */
     public Pet() {
+        name = "";
+        age = 0;
     }
 
     /**
      * @param name name of this pet
      */
     public Pet(String name) {
+        this.name = name;
     }
 
 
@@ -22,6 +28,7 @@ public abstract class Pet implements Animal {
      * @param age age of this pet
      */
     public Pet(int age) {
+        this.age = age;
     }
 
     /**
@@ -29,20 +36,24 @@ public abstract class Pet implements Animal {
      * @param age age of this pet
      */
     public Pet(String name, int age) {
+        this.name = name;
+        this.age = age;
     }
 
     /**
      * @return name of this pet
      */
     public String getName() {
-        return null;
+
+        return this.name;
     }
 
     /**
      * @return age of this pet
      */
     public Integer getAge() {
-        return null;
+
+        return this.age;
     }
 
     /**
