@@ -1,5 +1,8 @@
 package com.zipcodewilmington.assessment1.part2;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * Created by leon on 2/16/18.
  */
@@ -11,7 +14,13 @@ public class ArrayUtils {
      * Given an array of objects, named `objectArray`, and an object `objectToCount`, return the number of times the `objectToCount` appears in the `objectArray`
      */
     public static Integer getNumberOfOccurrences(Object[] objectArray, Object objectToCount) {
-        return null;
+        Integer counter = 0;
+        for (Object value : objectArray) {
+            if (value.equals(objectToCount)) {
+                counter++;
+            }
+        }
+        return counter;
     }
 
     /**
@@ -21,7 +30,14 @@ public class ArrayUtils {
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
-        return null;
+        ArrayList<Object> newArray = new ArrayList<>();
+
+        for (Object value : objectArray) {
+            if (!value.equals(objectToRemove)) {
+                newArray.add(value);
+            }
+        }
+        return newArray.toArray();
     }
 
     /**
@@ -50,6 +66,18 @@ public class ArrayUtils {
      * given two arrays `objectArray` and `objectArrayToAdd`, return an array containing all elements in `objectArray` and `objectArrayToAdd`
      */
     public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
-        return null;
+        ArrayList<Object> mergedArray = new ArrayList<>();
+
+        for (Object element:objectArray) {
+            mergedArray.add(element);
+        }
+
+        for (Object element:objectArrayToAdd) {
+            mergedArray.add(element);
+        }
+
+        Object[] newArray = mergedArray.toArray();
+
+        return newArray;
     }
 }
