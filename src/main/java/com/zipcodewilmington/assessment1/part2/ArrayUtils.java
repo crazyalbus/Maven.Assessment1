@@ -2,6 +2,7 @@ package com.zipcodewilmington.assessment1.part2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  * Created by leon on 2/16/18.
@@ -60,8 +61,31 @@ public class ArrayUtils {
      * @return the most frequently occurring object in the array
      * given an array of objects, named `objectArray` return the most frequently occuring object in the array
      */
-    public static Object getMostCommon(Object[] objectArray) {
-        return null;
+    public static Integer getMostCommon(Integer[] objectArray) {
+        HashMap<Integer, Integer> countOfNumbers = countFrequency(objectArray);
+        Integer currentGreatestKey = 0;
+        Integer currentGreatestCount = 0;
+        for (Integer number : countOfNumbers.keySet()) {
+            if(currentGreatestCount < countOfNumbers.get(number)) {
+                currentGreatestKey = number;
+                currentGreatestCount = countOfNumbers.get(number);
+            }
+        }
+
+        return currentGreatestKey;
+    }
+
+    public static HashMap<Integer, Integer> countFrequency(Integer[] input) {
+        HashMap<Integer, Integer> countNumbers = new HashMap<>();
+        for (Integer number : input) {
+            if(!countNumbers.containsKey(number)) {
+                countNumbers.put(number, 1);
+            } else {
+                int count = countNumbers.get(number);
+                countNumbers.put(number, count + 1);
+            }
+        }
+        return countNumbers;
     }
 
 
@@ -70,8 +94,18 @@ public class ArrayUtils {
      * @return the least frequently occurring object in the array
      * given an array of objects, named `objectArray` return the least frequently occuring object in the array
      */
-    public static Object getLeastCommon(Object[] objectArray) {
-        return null;
+    public static Object getLeastCommon(Integer[] objectArray) {
+        HashMap<Integer, Integer> countOfNumbers = countFrequency(objectArray);
+        Integer currentLeastKey = 0;
+        Integer currentLeastCount = Integer.MAX_VALUE;
+        for (Integer number : countOfNumbers.keySet()) {
+            if(currentLeastCount > countOfNumbers.get(number)) {
+                currentLeastKey = number;
+                currentLeastCount = countOfNumbers.get(number);
+            }
+        }
+
+        return currentLeastKey;
     }
 
     /**
