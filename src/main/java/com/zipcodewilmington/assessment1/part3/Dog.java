@@ -4,8 +4,9 @@ package com.zipcodewilmington.assessment1.part3;
  * Created by leon on 2/16/18.
  */
 public class Dog extends Pet {
-    private String name;
-    private Integer age;
+//    private String name;
+//    private Integer age;
+//    private String owner;
     /**
      * @param name name of this Dog
      * @param age age of this dog
@@ -20,6 +21,7 @@ public class Dog extends Pet {
      */
     public Dog(Integer age) {
         this.age = age;
+        name = "Dog name";
     }
 
     /**
@@ -36,7 +38,7 @@ public class Dog extends Pet {
      * age is 0
      */
     public Dog() {
-        name = "DogName";
+        name = "Dog name";
         age = 0;
     }
 

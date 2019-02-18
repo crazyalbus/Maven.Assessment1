@@ -4,8 +4,9 @@ package com.zipcodewilmington.assessment1.part3;
  * Created by leon on 2/16/18.
  */
 public class Cat extends Pet {
-    private String name;
-    private Integer age;
+//    private String name;
+//    private Integer age;
+//    private String owner;
 
     /**
      * @param name name of this Cat
@@ -21,6 +22,7 @@ public class Cat extends Pet {
      */
     public Cat(Integer age) {
         this.age = age;
+        name = "Cat name";
     }
 
     /**
@@ -37,7 +39,7 @@ public class Cat extends Pet {
      * age is 0
      */
     public Cat() {
-        name = "CatName";
+        name = "Cat name";
         age = 0;
     }
 

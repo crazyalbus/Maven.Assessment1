@@ -5,7 +5,8 @@ package com.zipcodewilmington.assessment1.part3;
  */
 public abstract class Pet implements Animal {
     String name;
-    int age;
+    Integer age;
+    String owner;
 
     /**
      * nullary constructor
@@ -61,6 +62,7 @@ public abstract class Pet implements Animal {
      * ensure this instance of `Pet` is added to the owner's composite `pets` list
      */
     public void setOwner(PetOwner newPetOwner) {
+
     }
 
     /**
