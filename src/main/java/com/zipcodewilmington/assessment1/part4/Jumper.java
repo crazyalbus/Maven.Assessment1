@@ -7,13 +7,6 @@ public class Jumper {
      */
     public int jumps(int k, int j) {
 
-        int sum = 0;
-        int jumps = 0;
-        while (sum < k) {
-            sum += j;
-            jumps++;
-        }
-
-        return jumps;
+        return ((k / j) + (k % j));
     }
 }

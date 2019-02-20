@@ -95,7 +95,7 @@ public class PetOwnerTest {
         PetOwner po = new PetOwner("", oneYearOldPuppy, twoYearOldKitten);
 
         // When
-        int actual = po.getYoungetPetAge();
+        int actual = po.getYoungestPetAge();
 
         // Then
         Assert.assertEquals(expected, actual);

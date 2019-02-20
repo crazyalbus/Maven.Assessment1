@@ -1,37 +1,42 @@
 package com.zipcodewilmington.assessment1.part5;
 
+import com.zipcodewilmington.assessment1.part1.BasicStringUtils;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Palindrome {
 
-    public Integer countPalindromes(String input){
-        String[] array = toStringArray(input);
+    public Integer countPalindromes(String input) {
         Integer numberOfPalindromes = 0;
-        if(isPalindromic(toStringArray(input))) {
-            numberOfPalindromes++;
+        Object[] getStrings = getAllStrings(input);
+
+        for (Object string : getStrings) {
+            String testString = string.toString();
+            if (Palindrome.isPalindromic(testString)) {
+                numberOfPalindromes++;
+            }
         }
-
-
-
         return numberOfPalindromes;
     }
 
-    public static String[] toStringArray(String input) {
-        String[] newArray = new String[input.length()];
+
+    public static Object[] getAllStrings(String input) {
+        ArrayList<String> allStrings = new ArrayList<>();
         for (int i = 0; i < input.length(); i++) {
-            newArray[i] = input.substring(i, i+1);
+            for (int j = i+1; j <= input.length(); j++) {
+                allStrings.add(input.substring(i,j));
+            }
         }
-        return newArray;
+        return allStrings.toArray();
     }
 
-    public static boolean isPalindromic(String[] array) {
-        String[] reversedArray = new String[array.length];
+    public static boolean isPalindromic(String toTest) {
 
-        for (int i=0; i<array.length; i++)
-        {
-            reversedArray[array.length - (i + 1)] = array[i];
+        String reversed = BasicStringUtils.reverse(toTest);
+        return toTest.equals(reversed);
         }
 
-        return Arrays.equals(array, reversedArray);
+
     }
-}
+

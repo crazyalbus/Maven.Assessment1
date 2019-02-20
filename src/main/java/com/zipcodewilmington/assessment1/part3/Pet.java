@@ -15,6 +15,7 @@ public abstract class Pet implements Animal {
     public Pet() {
         name = "";
         age = 0;
+        owner = null;
     }
 
     /**
@@ -72,7 +73,12 @@ public abstract class Pet implements Animal {
      */
     public PetOwner getOwner() {
 
+        return owner;
 
-        return null;
     }
 }
+//    Pet p = new Dog();
+//    PetOwner expected = new PetOwner(null, p);
+//
+//    // When
+//    PetOwner actual = p.getOwner();
