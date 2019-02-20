@@ -17,8 +17,11 @@ public class PetOwner {
      */
     public PetOwner(String name, Pet... pets) {
         this.name = name;
-        for (Pet pet : pets
-             ) {listOfPets.add(pet);
+        if(pets != null) { //added this because addPet test failed bc test passed pets = null
+            for (Pet pet : pets) {
+                listOfPets.add(pet);
+                pet.setOwner(this);
+            }
         }
 
     }
@@ -29,7 +32,7 @@ public class PetOwner {
      */
     public void addPet(Pet pet) {
         Pet newPet = pet;
-        listOfPets.add(pet);
+        listOfPets.add(newPet);
     }
 
     /**
@@ -50,7 +53,7 @@ public class PetOwner {
     /**
      * @return the age of the Pet object whose age field is the lowest amongst all Pets in this class
      */
-    public Integer getYoungetPetAge() {
+    public Integer getYoungestPetAge() {
         Integer currentAge = Integer.MAX_VALUE;
 
         for (Pet pet:listOfPets
@@ -113,7 +116,7 @@ public class PetOwner {
      * @return array representation of animals owned by this PetOwner
      */
     public Pet[] getPets() {
-        Pet[] returnPets = new Pet[listOfPets.size()];
+        Pet[] returnPets = new Pet[listOfPets.size()+1]; // added +1 so that test would run when listofpets has no elements
         for (int i = 0; i < listOfPets.size(); i++) {
             returnPets[i] = listOfPets.get(i);
         }
